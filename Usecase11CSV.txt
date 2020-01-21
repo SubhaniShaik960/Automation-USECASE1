@@ -1,0 +1,29 @@
+1	Excel: Open Spreadsheet "C:\Users\subhani\Documents\Automation Anywhere Files\Automation Anywhere\My Docs\Usecase1\invoice_template.xlsx". ActiveSheet: "Default". Session: Default
+2	Excel: Go to cell "A2". Session: Default
+3	Read From CSV file: "C:\Users\subhani\Documents\Automation Anywhere Files\Automation Anywhere\My Docs\Usecase1\Sample.csv" Delimiter: "Comma" Header: "No" Trim Leading Space: "Yes" Trim Trailing Space: "Yes" Session: 'Default'
+4	Start Loop "Each row in a CSV/Text file of Session: Default"
+5	     Comment: Use $Filedata Column$ variable for each record in File.
+6	     Message Box: "$Filedata Column(1)$ - $Filedata Column(2)$ - $Filedata Column(3)$ - $Filedata Column(4)$ - $Filedata Column(5)$ - $Filedata Column(6)$ - $Filedata Column(7)$ - $Filedata Column(8)$ - $Filedata Column(9)$ -  $Filedata Column(10)$ "
+7	     Excel: Set value of Active Cell with "$Filedata Column(1)$". Session: Default
+8	     Excel: Go to one cell right of active cell. Session: Default
+9	     Excel: Set value of Active Cell with "$Filedata Column(2)$". Session: Default
+10	     Excel: Go to one cell right of active cell. Session: Default
+11	     Excel: Set value of Active Cell with "$Filedata Column(3)$". Session: Default
+12	     Excel: Go to one cell right of active cell. Session: Default
+13	     Excel: Set value of Active Cell with "$Filedata Column(4)$". Session: Default
+14	     Excel: Go to one cell right of active cell. Session: Default
+15	     Excel: Set value of Active Cell with "$Filedata Column(5)$". Session: Default
+16	     Excel: Go to one cell right of active cell. Session: Default
+17	     Excel: Set value of Active Cell with "$Filedata Column(6)$". Session: Default
+18	     Excel: Go to one cell right of active cell. Session: Default
+19	     Excel: Set value of Active Cell with "$Filedata Column(7)$". Session: Default
+20	     Excel: Go to one cell right of active cell. Session: Default
+21	     Excel: Set value of Active Cell with "$Filedata Column(8)$". Session: Default
+22	     Excel: Go to one cell right of active cell. Session: Default
+23	     Excel: Set value of Active Cell with "$Filedata Column(9)$". Session: Default
+24	     Excel: Go to one cell right of active cell. Session: Default
+25	     Excel: Set value of Active Cell with "$Filedata Column(10)$". Session: Default
+26	     Excel: Go to one cell below the active cell. Session: Default
+27	     Excel: Go to beginning of the row of the active cell. Session: Default
+28	End Loop
+29	Excel: Close Spreadsheet. Session: Default

@@ -1,0 +1,65 @@
+1	Read From CSV file: "C:\Users\subhani\Documents\Automation Anywhere Files\Automation Anywhere\My Docs\Usecase1\confifiles.csv" Delimiter: "Comma" Header: "Yes" Trim Leading Space: "No" Trim Trailing Space: "No" Session: 'Default'
+2	Start Loop "Each row in a CSV/Text file of Session: Default"
+3	     Comment: Use $Filedata Column$ variable for each record in File.
+4	End Loop
+5	Log to File: Company, Invoice Date, Invoice Number, Salesperson, Job, Payment Terms, Due Date, Quantity, Description, Unit Price in "Sample.csv"
+6	Comment: ==============================================================================================
+7	Comment: Please enter the conditional commands here.
+8	Start Loop "Each File In Folder C:\Users\subhani\Documents\Automation Anywhere Files\Automation Anywhere\My Docs\Usecase1\Invoices"
+9	     PDF Integration: Extract Form Fields from "C:\Users\subhani\Documents\Automation Anywhere Files\Automation Anywhere\My Docs\Usecase1\Invoices\invoice0$Counter$.pdf"
+10	     String Operation: Before-After "$vCompany$" and assign output to $vCompany$
+11	     String Operation: Before-After "$vDescription1$" and assign output to $vDescription1$
+12	     String Operation: Before-After "$vDescription2$" and assign output to $vDescription2$
+13	     String Operation: Before-After "$vDescription3$" and assign output to $vDescription3$
+14	     String Operation: Before-After "$vDescription4$" and assign output to $vDescription4$
+15	     String Operation: Before-After "$vDueDate$" and assign output to $vDueDate$
+16	     String Operation: Before-After "$vInvoiceDate$" and assign output to $vInvoiceDate$
+17	     String Operation: Before-After "$vInvoiceNumber$" and assign output to $vInvoiceNumber$
+18	     String Operation: Before-After "$vJob$" and assign output to $vJob$
+19	     String Operation: Before-After "$vLineTotal1$"; Before: "$" and assign output to $vLineTotal1$
+20	     String Operation: Before-After "$vLineTotal2$"; Before: "$" and assign output to $vLineTotal2$
+21	     String Operation: Before-After "$vLineTotal3$"; Before: "$" and assign output to $vLineTotal3$
+22	     String Operation: Before-After "$vLineTotal4$"; Before: "$" and assign output to $vLineTotal4$
+23	     String Operation: Before-After "$vPaymentTerms$" and assign output to $vPaymentTerms$
+24	     String Operation: Before-After "$vQuantitiy1$" and assign output to $vQuantitiy1$
+25	     String Operation: Before-After "$vQuantity2$" and assign output to $vQuantity2$
+26	     String Operation: Before-After "$vQuantity3$" and assign output to $vQuantity3$
+27	     String Operation: Before-After "$vQuantity4$" and assign output to $vQuantity4$
+28	     String Operation: Before-After "$vSalesPerson$" and assign output to $vSalesPerson$
+29	     String Operation: Before-After "$vUnitPrice1$"; Before: "$" and assign output to $vUnitPrice1$
+30	     String Operation: Before-After "$vUnitPrice2$"; Before: "$" and assign output to $vUnitPrice2$
+31	     String Operation: Before-After "$vUnitPrice3$"; Before: "$" and assign output to $vUnitPrice3$
+32	     String Operation: Before-After "$vUnitPrice4$"; Before: "$" and assign output to $vUnitPrice4$
+33	     Comment: ==============================================================================================
+34	     If $vPaymentTerms$ Includes "Due on Receipt" AND $vQuantitiy1$ Greater Than or Equal To(>=) "2" AND $vUnitPrice1$ Greater Than or Equal To(>=) "2" AND $vLineTotal1$ Greater Than or Equal To(>=) "100" Then
+35	          Log to File: "$vCompany$","$vInvoiceDate$","$vInvoiceNumber$","$vSalesPerson$","$vJob$","$vPaymentTerms$","$vDueDate$","$vQuantitiy1$","$vDescription1$","$vUnitPrice1$","$vLineTotal1$" in "Sample.csv"
+36	          Comment: Please enter your commands to loop. Use $filename$.$extension$ variable for each file name in the Loop.
+37	     End If
+38	     If $vPaymentTerms$ Includes "Due on Receipt" AND $vQuantity2$ Greater Than or Equal To(>=) "2" AND $vUnitPrice2$ Greater Than or Equal To(>=) "2" AND $vLineTotal2$ Greater Than or Equal To(>=) "100" Then
+39	          Log to File: "$vCompany$","$vInvoiceDate$","$vInvoiceNumber$","$vSalesPerson$","$vJob$","$vPaymentTerms$","$vDueDate$","$vQuantitiy2$","$vDescription2$","$vUnitPrice2$","$vLineTotal2$" in "Sample.csv"
+40	     End If
+41	     If $vPaymentTerms$ Includes "Due on Receipt" AND $vQuantity3$ Greater Than or Equal To(>=) "2" AND $vUnitPrice3$ Greater Than or Equal To(>=) "2" AND $vLineTotal3$ Greater Than or Equal To(>=) "100" Then
+42	          Log to File: "$vCompany$","$vInvoiceDate$","$vInvoiceNumber$","$vSalesPerson$","$vJob$","$vPaymentTerms$","$vDueDate$","$vQuantitiy3$","$vDescription3$","$vUnitPrice3$","$vLineTotal3$" in "Sample.csv"
+43	     End If
+44	     If $vPaymentTerms$ Includes "Due on Receipt" AND $vQuantity4$ Greater Than or Equal To(>=) "2" AND $vUnitPrice4$ Greater Than or Equal To(>=) "2" AND $vLineTotal4$ Greater Than or Equal To(>=) "100" Then
+45	          Log to File: "$vCompany$","$vInvoiceDate$","$vInvoiceNumber$","$vSalesPerson$","$vJob$","$vPaymentTerms$","$vDueDate$","$vQuantitiy1$","$vDescription1$","$vUnitPrice1$","$vLineTotal1$" in "Sample.csv"
+46	     End If
+47	     Comment:  Null operations
+48	     Variable Operation:  To $vQuantitiy1$
+49	     Variable Operation:  To $vQuantity2$
+50	     Variable Operation:  To $vQuantity3$
+51	     Variable Operation:  To $vQuantity4$
+52	     Variable Operation:  To $vDescription1$
+53	     Variable Operation:  To $vDescription2$
+54	     Variable Operation:  To $vDescription3$
+55	     Variable Operation:  To $vDescription4$
+56	     Variable Operation:  To $vUnitPrice1$
+57	     Variable Operation:  To $vUnitPrice2$
+58	     Variable Operation:  To $vUnitPrice3$
+59	     Variable Operation:  To $vUnitPrice4$
+60	     Variable Operation:  To $vLineTotal1$
+61	     Variable Operation:  To $vLineTotal2$
+62	     Variable Operation:  To $vLineTotal3$
+63	     Variable Operation:  To $vLineTotal4$
+64	     Variable Operation: 1 To $vCounter$
+65	End Loop
